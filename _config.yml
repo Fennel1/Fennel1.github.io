@@ -3,9 +3,9 @@ title: Fennel
 SEOTitle: Fennel's blog
 header-img: img/post-bg-desk.jpg
 email: fennel1@163.com
-description: "123"
+description: "初级炼丹师"
 keyword: "机器学习,深度学习"
-url: "https://fennel1.github.io"          # your host, for absolute URL
+url: "https://Fennel1.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/Fennel1/Fennel1.github.io.git" # you code repository
 
