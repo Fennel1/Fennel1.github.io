@@ -4,7 +4,7 @@ SEOTitle: Fennel's blog
 header-img: img/post-bg-desk.jpg
 email: fennel1@163.com
 description: "初级炼丹师"
-keyword: "深度学习"
+keyword: "机器学习,深度学习"
 url: "https://fennel1.github.io"          # your host, for absolute URL
 baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
 github_repo: "https://github.com/Fennel1/Fennel1.github.io.git" # you code repository
@@ -61,12 +61,12 @@ kramdown:
 
 # Gitalk
 gitalk:
-  enable: true    #是否开启Gitalk评论
+  enable: false    #是否开启Gitalk评论
   clientID: d18b343dd9c7ca49518a                            #生成的clientID
   clientSecret: 539e88b8a7feffaddbb553b9c421dfefcbc6eced    #生成的clientSecret
-  repo: klovien.github.io    #仓库名称
-  owner: klovien    #github用户名
-  admin: klovien
+  repo: Fennel1.github.io    #仓库名称
+  owner: Fennel1    #github用户名
+  admin: Fennel1
   distractionFreeMode: true #是否启用类似FB的阴影遮罩
 
 
@@ -98,14 +98,4 @@ service-worker: true
 
 # 友情链接，请尽量不要删除，谢谢！
 friends: [
-    {
-        title: "星球国际语",
-        href: "https://globien.gitee.io"
-    },{
-        title: "星球语互动社区",
-        href: "https://tieba.baidu.com/f?kw=%E6%A0%BC%E7%BD%97%E6%AF%94%E8%A8%80&fr=home"
-    },{
-        title: "知乎：人造国际语",
-        href: "https://zhuanlan.zhihu.com/Artificial-International-Language"
-    }
 ]
