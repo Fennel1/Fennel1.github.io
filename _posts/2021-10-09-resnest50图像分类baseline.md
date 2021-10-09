@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      resnest50图像分类baseline
-subtitle:   基于kaggle竞赛: Classify Leaves
+title:      (resnest50图像分类baseline)
+subtitle:   (基于kaggle竞赛: Classify Leaves)
 date:       2021-10-09
 author:     fennel
 header-img: img/the-first.png
