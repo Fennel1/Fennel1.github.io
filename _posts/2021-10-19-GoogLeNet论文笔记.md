@@ -10,7 +10,7 @@ tags:
     - 论文笔记
 ---
 
--- 论文pdf
+## 论文pdf
 
 - [Going deeper with convolutions](/paper/googlenet.pdf)
 
