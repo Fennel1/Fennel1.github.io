@@ -14,6 +14,8 @@ tags:
 
 - [Attention Is All You Need](/paper/Transformer.pdf)
 
+--- 
+
 ## 前言
 
 ![transformert2](/my_img/transformert2.png)
