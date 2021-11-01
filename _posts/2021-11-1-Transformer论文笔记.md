@@ -26,11 +26,25 @@ tags:
 
 ## Architecture
 
-
+![transformerf1](/my_img/transformerf1.png)
 
 #### Encoder-Decoder
 
+- Encoder：每个编码器层中均有两个子层，多头注意力(multi-head self-attention mechanism)与全连接前馈网络(Feed Forward Neural Network)。并且两个子层中均有残差连接与**层归一化**，即每个子层的输出为 LayerNorm(x + Sublayer(x))。模型中所有子层输出的维度为512(每个词元为一个长度为512的向量)。*batchNorm：对同一个batch下不同样本的同一特征进行归一化，；layerNorm：对同一样本的不同特征进行归一化*
+- Decoder：除了编码器中的两个子层以外解码器还加入了一个encoder-decoder attention层，在这一层中Q来自解码器的输出，K、V来自编码器的输出。由于在翻译当前位置时不应该关注后续位置的信息，所以使用masked multi-head attention去掩盖住后续的输出，保证位置i的预测只依赖于位置i之前的输出。解码器中同样加入了参擦连接与层归一化。
+
 #### Attention
+
+在注意力机制中有Query(Q)、Key(K)、Value(V)，attention的计算过程是计算我要查询的Q与每个K的相似程度，再将相似度乘到V上得到最后的值。在self-attention中Q、K、V都从输入的embedding向量中得到，长度均为64。通过三个512×64的权重矩阵学习得到，如下图所示。
+![transformerp1](/my_img/transformerp1.png)
+attention的计算过程分为7部：
+1. 将输入词元转换为embedding向量。
+2. 由embedding向量得到Q、K、V三个向量。
+3. 每个词元计算一个值score=Q×K^T。
+4. 当Q、K向量长度较长时，点积值会过大，再经softmax函数会使梯度过小收敛变慢。所以对score除以[latex]\sqrt{d_k}[/latex]
+![transformerp2](/my_img/transformerp2.png)
+
+
 
 #### Feed-Forward Networks
 
