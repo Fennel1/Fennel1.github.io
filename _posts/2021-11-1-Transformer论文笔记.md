@@ -23,6 +23,7 @@ tags:
 **Method：** 注意力机制允许对依赖关系建模，无需考虑它们在输入与输出序列中的距离。作者提出了Transformer结构，用多头自注意力取代了编码器-解码器架构中的循环层，实现了一个完全基于注意力的序列转换模型。 <br>
 **Results：** 在翻译任务中因为Transformer的高并行计算，训练速度明显快于基于循环或卷积层的架构。在 WMT 2014 English-to-German 和 WMT 2014 English-to-French 翻译任务中取得了最优水平。 <br>
 
+---
 
 ## Architecture
 
@@ -84,6 +85,8 @@ attention的计算过程分为7步：
 ![](https://latex.codecogs.com/svg.image?PE_{(pos,2i)}=sin(\frac{pos}{10000^{\frac{2i}{d_{model}}}}))
 ![](https://latex.codecogs.com/svg.image?PE_{(pos,2i&plus;1)}=cos(\frac{pos}{10000^{\frac{2i}{d_{model}}}}))
 pos表示词元的位置，i表示词元的维度。作者考虑到词与词之间的相对位置也很重要，所以选择如上函数使得可以很容易的计算词元间的相对位置。
+
+---
 
 ## 参考阅读
 
