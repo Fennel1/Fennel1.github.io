@@ -35,7 +35,7 @@ tags:
 
 #### Attention
 
-在注意力机制中有Query(Q)、Key(K)、Value(V)，attention的计算过程是计算我要查询的Q与每个K的相似程度，再将相似度乘到V上得到最后的值。在self-attention中Q、K、V都从输入的embedding向量中得到，长度均为64。通过三个512×64的权重矩阵学习得到，如下图所示。
+**self-attention**：在注意力机制中有Query(Q)、Key(K)、Value(V)，attention的计算过程是计算我要查询的Q与每个K的相似程度，再将相似度乘到V上得到最后的值。在self-attention中Q、K、V都从输入的embedding向量中得到，长度均为64。通过三个512×64的权重矩阵学习得到，如下图所示。
 ![transformerp1](/my_img/transformerp1.png)
 attention的计算过程分为7步：
 1. 将输入词元转换为embedding向量。
@@ -63,6 +63,15 @@ attention的计算过程分为7步：
 - **decoder layers**：解码器中的Q、K、V应来自于它前一层的输出，但关注位置仅为当前位置之前的所有位置，通过下图中的mask操作将屏蔽的值设置为负无穷来实现。
 
 ![transformerf22](/my_img/transformerf22.png)
+
+**为什么用自注意力**：
+- 每层的计算复杂度
+- 可以并行化的计算量：通过最小顺序操作数来衡量
+- 网络中远距离依赖的路径长度：学习远距离的依赖时序列转换任务的关键，影响学习这种依赖关系的一个关键因素就是网络传播时需要穿越的路径长度
+
+如下图所示，与CNN、RNN相比自注意力有更高的并行计算能力与更短的依赖路径长度，且计算复杂度不会过大。
+
+![transformert1](/my_img/transformert1.png)
 
 #### Feed-Forward Networks
 
