@@ -101,4 +101,3 @@ pos表示词元的位置，i表示词元的维度。作者考虑到词与词之�
 
 - [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/)
 - [Transformer论文逐段精读【论文精读】](https://www.bilibili.com/video/BV1pu411o7BE)
-- 
