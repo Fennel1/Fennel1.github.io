@@ -48,8 +48,20 @@ attention的计算过程分为7步：
 ![](https://latex.codecogs.com/svg.image?Attention(Q,K,V)=softmax(\frac{QK^T}{\sqrt{d_k}})V)
 ![transformerp2](/my_img/transformerp2.png)
 
+而在实际计算过程中采用矩阵计算的方式来加快计算速度。X中的每一行对应每一个词元。
+![transformerp3](/my_img/transformerp3.png)
+![transformerp4](/my_img/transformerp4.png)
 
+**Multi-Head Attention**：多头注意力相当于将每个词元进行h个不同的self-attention，再聚合到一起。计算过程为将词元向量输入到h个self-attention中得到h个特征矩阵，将h个特征矩阵拼成一个大的特征矩阵，特征矩阵经过一层全连接层后得到最后的输出。
+![](https://latex.codecogs.com/svg.image?MultiHead(Q,K,V)=Concat(head_1,\cdots&space;,head_h)W^o)
+![](https://latex.codecogs.com/svg.image?head_i=Attention(QW_{i}^{Q},W_{i}^{K},W_{i}^{V}))
+![transformerf2](/my_img/transformerf2.png)
 
 #### Feed-Forward Networks
 
+解码器和编码器中的每一层都有一个全连接的前馈网络。它通过两个1×1的卷积核进行线性变换，先将维度从512升到2048，再从2048降到512。同样有残差连接与层归一化操作。
+![](https://latex.codecogs.com/svg.image?FFN(x)=max(0,xW_1&plus;b_1)W_2&plus;b_2)
+
 #### Positional Encoding
+
+
