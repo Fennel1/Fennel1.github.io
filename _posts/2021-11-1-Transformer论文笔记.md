@@ -22,3 +22,16 @@ tags:
 减少顺序计算也构成了扩展模型的基础，在如ByteNet、ConvS2S等模型中关联两个输入或输出位置的信号所需的计算量随着位置的增加而增加，这使得学习远距离位置之间的依赖关系更加困难。<br>
 **Method：** 注意力机制允许对依赖关系建模，无需考虑它们在输入与输出序列中的距离。作者提出了Transformer结构，用多头自注意力取代了编码器-解码器架构中的循环层，实现了一个完全基于注意力的序列转换模型。 <br>
 **Results：** 在翻译任务中因为Transformer的高并行计算，训练速度明显快于基于循环或卷积层的架构。在 WMT 2014 English-to-German 和 WMT 2014 English-to-French 翻译任务中取得了最优水平。 <br>
+
+
+## Architecture
+
+
+
+#### Encoder-Decoder
+
+#### Attention
+
+#### Feed-Forward Networks
+
+#### Positional Encoding
