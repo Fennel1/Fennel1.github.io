@@ -37,11 +37,15 @@ tags:
 
 在注意力机制中有Query(Q)、Key(K)、Value(V)，attention的计算过程是计算我要查询的Q与每个K的相似程度，再将相似度乘到V上得到最后的值。在self-attention中Q、K、V都从输入的embedding向量中得到，长度均为64。通过三个512×64的权重矩阵学习得到，如下图所示。
 ![transformerp1](/my_img/transformerp1.png)
-attention的计算过程分为7部：
+attention的计算过程分为7步：
 1. 将输入词元转换为embedding向量。
 2. 由embedding向量得到Q、K、V三个向量。
 3. 每个词元计算一个值score=Q×K^T。
-4. 当Q、K向量长度较长时，点积值会过大，再经softmax函数会使梯度过小收敛变慢。所以对score除以![](https://latex.codecogs.com/svg.image?%5Csqrt%7Bd_k%7D)
+4. 当Q、K向量长度较长时，点积值会过大，再经softmax函数会使梯度过小收敛变慢。所以对score除以sqrt(d_k)。
+5. 再进行softmax操作。
+6. softmax得到的值点乘V得到每个词元的评分。
+7. 相加得到最终输出的结果。
+![](https://latex.codecogs.com/svg.image?Attention(Q,K,V)=softmax(\frac{QK^T}{\sqrt{d_k}})V)
 ![transformerp2](/my_img/transformerp2.png)
 
 
