@@ -41,7 +41,7 @@ attention的计算过程分为7部：
 1. 将输入词元转换为embedding向量。
 2. 由embedding向量得到Q、K、V三个向量。
 3. 每个词元计算一个值score=Q×K^T。
-4. 当Q、K向量长度较长时，点积值会过大，再经softmax函数会使梯度过小收敛变慢。所以对score除以[latex]\sqrt{d_k}[/latex]
+4. 当Q、K向量长度较长时，点积值会过大，再经softmax函数会使梯度过小收敛变慢。所以对score除以![](https://latex.codecogs.com/svg.image?%5Csqrt%7Bd_k%7D)
 ![transformerp2](/my_img/transformerp2.png)
 
 
