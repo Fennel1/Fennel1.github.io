@@ -41,7 +41,7 @@ attention的计算过程分为7步：
 1. 将输入词元转换为embedding向量。
 2. 由embedding向量得到Q、K、V三个向量。
 3. 每个词元计算一个值score=Q×K^T。
-4. 当Q、K向量长度较长时，点积值会过大，再经softmax函数会使梯度过小收敛变慢。所以对score除以sqrt(d_k)。
+4. 当Q、K向量长度较长时，点积值会过大，再经softmax函数会使梯度过小收敛变慢，所以对score进行归一化处理。
 5. 再进行softmax操作。
 6. softmax得到的值点乘V得到每个词元的评分。
 7. 相加得到最终输出的结果。
