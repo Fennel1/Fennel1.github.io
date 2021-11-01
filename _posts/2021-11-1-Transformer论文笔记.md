@@ -57,6 +57,13 @@ attention的计算过程分为7步：
 ![](https://latex.codecogs.com/svg.image?head_i=Attention(QW_{i}^{Q},W_{i}^{K},W_{i}^{V}))
 ![transformerf2](/my_img/transformerf2.png)
 
+在Transformer中有三种多头注意力：
+- **encoder-decoder attention layers**：Q来自上一个解码器的输出，K、V来自编码器的输出，这使得解码器中的每一个位置都注意了输入序列的所有位置。
+- **encoder layers**：Q、K、V都来自相同的输入。同样使得编码器中的每一个位置都注意了编码器前一层中的所有位置。
+- **decoder layers**：解码器中的Q、K、V应来自于它前一层的输出，但关注位置仅为当前位置之前的所有位置，通过下图中的mask操作将屏蔽的值设置为负无穷来实现。
+
+![transformerf22](/my_img/transformerf22.png)
+
 #### Feed-Forward Networks
 
 解码器和编码器中的每一层都有一个全连接的前馈网络。它通过两个1×1的卷积核进行线性变换，先将维度从512升到2048，再从2048降到512。同样有残差连接与层归一化操作。
