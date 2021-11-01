@@ -71,4 +71,13 @@ attention的计算过程分为7步：
 
 #### Positional Encoding
 
+仅使用自注意力的模型中不包含时序信息，无论怎样打乱顺序都会得到同样的结果。而我们都知道句子中词出现的顺序会影响句子的意思。所以需要加入些序列信息，作者使用了位置编码(positional encodings)加入到编码器和编码器的embedding向量中，位置编码的长度与embedding向量的长度相同，直接相加即可。
+![](https://latex.codecogs.com/svg.image?PE_{(pos,2i)}=sin(\frac{pos}{10000^{\frac{2i}{d_{model}}}}))
+![](https://latex.codecogs.com/svg.image?PE_{(pos,2i&plus;1)}=cos(\frac{pos}{10000^{\frac{2i}{d_{model}}}}))
+pos表示词元的位置，i表示词元的维度。作者考虑到词与词之间的相对位置也很重要，所以选择如上函数使得可以很容易的计算词元间的相对位置。
+
+## 参考阅读
+
+- [The Illustrated Transformer](http://jalammar.github.io/illustrated-transformer/)
+
 
